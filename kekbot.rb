@@ -39,6 +39,18 @@ kekbot = Cinch::Bot.new do
         m.reply "YE YE YE"
     end
     
+	    on :message, "Kek" do |m|
+        m.reply "kek"
+    end
+	
+	on :message, "woah" do |m|
+        m.reply "whoa*"
+    end
+	
+	on :message, ".acbn" do |m|
+        m.reply "furry"
+    end
+	
 	on :message, ":D" do |m|
         m.reply ":DDDD"
     end
@@ -47,24 +59,41 @@ kekbot = Cinch::Bot.new do
         m.reply "You mean James?"
     end
 	
+	on :message, ".bots" do |m|
+        m.reply "What's up fam?"
+    end
+	
 	on :message, /[4][2][0]/ do |m|
         m.reply "blaze it fegit"
+    end
+	
+	on :message, /[Aa][Yy][Yy]/ do |m|
+        m.reply "lmao"
+    end
+	
+	on :message, /[Dd][Uu][Dd][Ee]/ do |m|
+        m.reply "weed"
+		m.reply "lmao"
+    end
+	
+	on :message, /[Hh][Ee][Hh][Ee]/ do |m|
+        m.reply "xd"
+    end
+	
+	on :message, /[Kk][Ee][Kk][Bb][Oo][Tt]/ do |m|
+        m.reply "hello hello"
     end
 	
 	on :message, "^" do |m|
         m.reply "^"
     end
 	
-	    on :message, "<3" do |m|
+	on :message, "<3" do |m|
         m.reply "<3333"
     end
 	
 	on :message, "kek" do |m|
         m.reply "kek"
-    end
-
-	on :message, "hehe" do |m|
-        m.reply "xd"
     end
 	
 	on :message, "lol" do |m|
@@ -101,9 +130,6 @@ kekbot = Cinch::Bot.new do
 	    m.reply "What you’re referring to as Linux, is in fact, GNU/Linux, or as I’ve recently taken to calling it, GNU + Linux."
 	end
     end
-    on :message, "ayy" do |m|
-        m.reply "lmao"
-    end
 
     on :message, "o shit" do |m|
         m.reply "waddup"
@@ -112,12 +138,19 @@ kekbot = Cinch::Bot.new do
 	on :message, "oshit" do |m|
         m.reply "waddup"
     end
-	
-    on :message, "dude" do |m|
-        m.reply "weed"
-		m.reply "lmao"
-    end
 
+	on :message, "Hey guys!" do |m|
+        m.reply "Welcome to EB Games."
+    end
+	
+	on :message, "Hey guys" do |m|
+        m.reply "Welcome to EB Games."
+    end
+	
+	on :message, "hey guys" do |m|
+        m.reply "Welcome to EB Games."
+    end
+	
     on :message, "lok" do |m|
         m.reply "lol"
     end
@@ -134,6 +167,10 @@ kekbot = Cinch::Bot.new do
         m.channel.action("eats ".concat(target))
     end
 
+	on :message, /^.shiton (.+)/ do |m, target|
+        m.channel.action("shits on ".concat(target))
+    end
+	
     on :message, /^.rwb (.+)/ do |m, words|
         out = ""
 	col = 0
