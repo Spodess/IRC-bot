@@ -60,7 +60,11 @@ kekbot = Cinch::Bot.new do
     end
 	
 	on :message, ".bots" do |m|
-        m.reply "What's up fam?"
+        m.reply "What's up fam? | Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
+    end
+	
+	on :message, ".source" do |m|
+        m.reply "Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
     end
 	
 	on :message, /[4][2][0]/ do |m|
@@ -162,13 +166,17 @@ kekbot = Cinch::Bot.new do
     on :message, "meme" do |m|
         m.reply "i love memes!"
     end
-    
+	
+     on :message, "kk" do |m|
+        m.reply "bb"
+    end
+	
     on :message, /^.eat (.+)/ do |m, target|
         m.channel.action("eats ".concat(target))
     end
 
 	on :message, /^.shiton (.+)/ do |m, target|
-        m.channel.action("shits on ".concat(target))
+        m.channel.action("takes a liquidy; massive stinky shit onto ".concat(target))
     end
 	
     on :message, /^.rwb (.+)/ do |m, words|
