@@ -55,6 +55,14 @@ kekbot = Cinch::Bot.new do
         m.reply ":DDDD"
     end
 	
+	on :message, /fuck you/i do |m|
+    m.reply "No fuck you, #{m.user.nick}"
+  end	
+	
+	on :message, /james/i do |m|
+    m.reply "Speaking of James, that's Tomoko right?"
+  end		
+	
 	on :message, /hello/i do |m|
     m.reply "Hello, #{m.user.nick}"
   end
@@ -64,11 +72,11 @@ kekbot = Cinch::Bot.new do
     end
 	
 	on :message, ".bots" do |m|
-        m.reply "What's up fam? | Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
+		m.reply "What's up fam? \x02[Ruby]\x02 | Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb" 
     end
 	
 	on :message, ".source" do |m|
-        m.reply "Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
+        m.reply "Source \x02[Ruby]\x02: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
     end
 	
 	on :message, /420/i do |m|
@@ -88,7 +96,7 @@ kekbot = Cinch::Bot.new do
         m.reply "xd"
     end
 	
-	on :message, /[<3]/ do |m|
+	on :message, /[<][3]/ do |m|
         m.reply "<3333"
     end
 	
@@ -178,6 +186,10 @@ kekbot = Cinch::Bot.new do
 	
 	on :message, /^.fuck (.+)/ do |m, target|
         m.channel.action("annihilates " +target  + "'s anus")
+    end
+	
+	on :message, /^.cowsay (.+)/ do |m, say|
+        m.reply Cow.new.say(say)
     end
 	
     on :message, /^.rwb (.+)/ do |m, words|
