@@ -84,16 +84,20 @@ kekbot = Cinch::Bot.new do
         m.reply "xd"
     end
 	
+	on :message, /[<3]/ do |m|
+        m.reply "<3333"
+    end
+	
 	on :message, /[Kk][Ee][Kk][Bb][Oo][Tt]/ do |m|
         m.reply "hello hello"
     end
 	
-	on :message, "^" do |m|
-        m.reply "^"
+	on :message, /[Hh][Ee][Ll][Pp]/ do |m|
+        m.reply "install gentoo"
     end
 	
-	on :message, "<3" do |m|
-        m.reply "<3333"
+	on :message, "^" do |m|
+        m.reply "^"
     end
 	
 	on :message, "kek" do |m|
@@ -109,10 +113,6 @@ kekbot = Cinch::Bot.new do
 	
 	on :message, "bot" do |m|
         m.reply "Hello!"
-    end
-	
-	on :message, "help" do |m|
-        m.reply "install gentoo"
     end
 	
     on :message, ".pomf" do |m|
@@ -177,6 +177,10 @@ kekbot = Cinch::Bot.new do
 
 	on :message, /^.shiton (.+)/ do |m, target|
         m.channel.action("takes a liquidy; massive stinky shit onto ".concat(target))
+    end
+	
+	on :message, /^.fuck (.+)/ do |m, target|
+        m.channel.action("annihilates " +target  + "'s anus")
     end
 	
     on :message, /^.rwb (.+)/ do |m, words|
