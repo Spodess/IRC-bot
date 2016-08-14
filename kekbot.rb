@@ -55,6 +55,10 @@ kekbot = Cinch::Bot.new do
         m.reply ":DDDD"
     end
 	
+	on :message, /hello/i do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+	
 	on :message, ".tomoko" do |m|
         m.reply "You mean James?"
     end
@@ -67,20 +71,20 @@ kekbot = Cinch::Bot.new do
         m.reply "Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
     end
 	
-	on :message, /[4][2][0]/ do |m|
+	on :message, /420/i do |m|
         m.reply "blaze it fegit"
     end
 	
-	on :message, /[Aa][Yy][Yy]/ do |m|
+	on :message, /ayy/i do |m|
         m.reply "lmao"
     end
 	
-	on :message, /[Dd][Uu][Dd][Ee]/ do |m|
+	on :message, /dude/i do |m|
         m.reply "weed"
 		m.reply "lmao"
     end
 	
-	on :message, /[Hh][Ee][Hh][Ee]/ do |m|
+	on :message, /hehe/i do |m|
         m.reply "xd"
     end
 	
@@ -88,11 +92,11 @@ kekbot = Cinch::Bot.new do
         m.reply "<3333"
     end
 	
-	on :message, /[Kk][Ee][Kk][Bb][Oo][Tt]/ do |m|
+	on :message, /kekbot/ do |m|
         m.reply "hello hello"
     end
 	
-	on :message, /[Hh][Ee][Ll][Pp]/ do |m|
+	on :message, /help/i do |m|
         m.reply "install gentoo"
     end
 	
@@ -124,15 +128,8 @@ kekbot = Cinch::Bot.new do
         m.reply ":3"
     end
 
-    on :message, /[Nn][Aa][Vv][Yy]/ do |m|
+    on :message, /navy/i do |m|
         m.reply "What the fuck did you just fucking say about me, you little bitch?"
-    end
-
-    on :message, "linux" do |m|
-        if rand(5) == 1
-            m.reply "I'd just like to interject for a moment."
-	    m.reply "What you’re referring to as Linux, is in fact, GNU/Linux, or as I’ve recently taken to calling it, GNU + Linux."
-	end
     end
 
     on :message, "o shit" do |m|
