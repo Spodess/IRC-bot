@@ -88,6 +88,14 @@ kekbot = Cinch::Bot.new do
     m.reply "Hello, #{m.user.nick}"
   end
   
+  	on :message, "sup" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
+  	on :message, "Sup" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
   	on :message, "Yo" do |m|
     m.reply "Hello, #{m.user.nick}"
   end
