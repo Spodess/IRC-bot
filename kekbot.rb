@@ -9,9 +9,9 @@ redis = Redis.new(:port => 6379)
 kekbot = Cinch::Bot.new do
     configure do |c|
     c.server = "irc.rizon.net"
-	c.port = "7000"
+	c.port = "6667"
 	c.nick = "kekbot"
-	c.channels = ["#homescreen", "#fsf"]
+	c.channels = ["#homescreen"]
     end
 
 	 Timer(150) { 
@@ -35,8 +35,13 @@ kekbot = Cinch::Bot.new do
 	end
     end
 
+	 on :message, ".reset" do |m|
+        m.channel.part()
+		m.channel.join()
+	end
+	
     on :message, "ye" do |m|
-        m.reply "YE YE YE"
+        m.reply "YEEEE BOI"
     end
     
 	    on :message, "Kek" do |m|
@@ -58,6 +63,10 @@ kekbot = Cinch::Bot.new do
 	on :message, /fuck you/i do |m|
     m.reply "No fuck you, #{m.user.nick}"
   end	
+  
+  	on :message, /fuck u/i do |m|
+    m.reply "No fuck you, #{m.user.nick}"
+  end	
 	
 	on :message, /james/i do |m|
     m.reply "Speaking of James, that's Tomoko right?"
@@ -67,10 +76,50 @@ kekbot = Cinch::Bot.new do
     m.reply "Hello, #{m.user.nick}"
   end
   
+  	on :message, "Hey" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
+  	on :message, "hey" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+
+	on :message, "yo" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
+  	on :message, "Yo" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
 	on :message, "Hello" do |m|
     m.reply "Hello, #{m.user.nick}"
   end
-	
+  
+  	on :message, "Cya" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+  
+	on :message, "cya" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+
+  	on :message, "bye" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+  
+	on :message, "Bye" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+  
+    on :message, "Goodbye" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+  
+    on :message, "goodbye" do |m|
+    m.reply "Cya later, #{m.user.nick}"
+  end
+  
 	on :message, ".tomoko" do |m|
         m.reply "You mean James?"
     end
@@ -120,9 +169,7 @@ kekbot = Cinch::Bot.new do
         m.reply "kek"
     end
 	
-	on :message, "lol" do |m|
-        m.reply "lol"
-    end
+	
 	on :message, "wew" do |m|
         m.reply "lad"
     end
