@@ -11,7 +11,7 @@ kekbot = Cinch::Bot.new do
     c.server = "irc.rizon.net"
 	c.port = "6667"
 	c.nick = "kekbot"
-	c.channels = ["#homescreen"]
+	c.channels = ["#homescreen", "#fsf"]
     end
 
 	 Timer(150) { 
@@ -79,6 +79,15 @@ kekbot = Cinch::Bot.new do
   	on :message, "Hey" do |m|
     m.reply "Hello, #{m.user.nick}"
   end
+  
+    on :message, "Hi" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
+  on :message, "hi" do |m|
+    m.reply "Hello, #{m.user.nick}"
+  end
+  
   
   	on :message, "hey" do |m|
     m.reply "Hello, #{m.user.nick}"
