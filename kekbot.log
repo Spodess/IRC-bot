@@ -1,0 +1,238 @@
+
+[2016/08/25 19:13:32.108] !! [on handler] Registering handler with pattern `#<Cinch::Pattern:0x00000000ce5978 @prefix=nil, @pattern=//, @suffix=nil>`, reacting on `connect`
+[2016/08/25 19:13:32.108] !! [on handler] Registering handler with pattern `#<Cinch::Pattern:0x00000000ce4e60 @prefix=nil, @pattern=//, @suffix=nil>`, reacting on `disconnect`
+[2016/08/25 19:13:32.108] II Connecting to irc.rizon.net:6667
+[2016/08/25 19:13:32.719] << CAP LS 
+[2016/08/25 19:13:32.719] << NICK kekbot 
+[2016/08/25 19:13:32.720] << USER cinch 0 * :cinch
+[2016/08/25 19:13:32.960] >> :irc.losslessone.com 439 * :Please wait while we process your connection.
+[2016/08/25 19:13:32.960] >> :irc.losslessone.com NOTICE AUTH :*** Looking up your hostname...
+[2016/08/25 19:13:32.961] >> :irc.losslessone.com NOTICE AUTH :*** Checking Ident
+[2016/08/25 19:13:33.202] >> :irc.losslessone.com NOTICE AUTH :*** Found your hostname
+[2016/08/25 19:13:34.731] >> :irc.losslessone.com NOTICE AUTH :*** No Ident response
+[2016/08/25 19:13:34.735] >> :irc.losslessone.com CAP * LS :multi-prefix uhnames userhost-in-names
+[2016/08/25 19:13:34.735] >> :irc.losslessone.com 433 * kekbot :Nickname is already in use.
+[2016/08/25 19:13:34.736] << CAP REQ :multi-prefix
+[2016/08/25 19:13:34.736] << NICK kekbot_ 
+[2016/08/25 19:13:34.979] >> :irc.losslessone.com CAP * ACK :multi-prefix
+[2016/08/25 19:13:34.979] << CAP END 
+[2016/08/25 19:13:35.503] >> :irc.losslessone.com NOTICE kekbot_ :*** Your host is masked (Rizon-7513C575.lnse1.lon.bigpond.net.au)
+[2016/08/25 19:13:35.504] >> :irc.losslessone.com 001 kekbot_ :Welcome to the Rizon Internet Relay Chat Network kekbot_
+[2016/08/25 19:13:35.504] >> :irc.losslessone.com 002 kekbot_ :Your host is irc.losslessone.com, running version hybrid-7.2.3+plexus-3.1.0(20151005_0-546)
+[2016/08/25 19:13:35.505] II Detected IRCd: hybrid
+[2016/08/25 19:13:35.505] >> :irc.losslessone.com 003 kekbot_ :This server was created Oct 13 2015 at 12:04:49
+[2016/08/25 19:13:35.505] >> :irc.losslessone.com 004 kekbot_ irc.losslessone.com hybrid-7.2.3+plexus-3.1.0(20151005_0-546) CDFGNRSUWXabcdfgijklnopqrsuwxyz BIMNORSabcehiklmnopqstvz Iabehkloqv 
+[2016/08/25 19:13:35.506] !! [New thread] For #<Cinch::Handler @event=:connect pattern=#<Cinch::Pattern:0x00000000f5c7b0 @prefix=nil, @pattern=//, @suffix=nil>>: #<Thread:0x00000001a58920> -- 1 in total.
+[2016/08/25 19:13:35.506] !! [Thread done] For #<Cinch::Handler @event=:connect pattern=#<Cinch::Pattern:0x00000000f5c7b0 @prefix=nil, @pattern=//, @suffix=nil>>: #<Thread:0x00000001a58920> -- 0 remaining.
+[2016/08/25 19:13:35.507] !! [New thread] For #<Cinch::Handler @event=:connect pattern=#<Cinch::Pattern:0x00000000ce5978 @prefix=nil, @pattern=//, @suffix=nil>>: #<Thread:0x00000001a58510> -- 1 in total.
+[2016/08/25 19:13:35.507] !! [timer] Starting timer <Cinch::Timer 0/1 shots, 0s interval, threaded, not started, block: #<Proc:0x00000000ce5bd0@/home/varzeki/.gem/ruby/2.1.0/gems/cinch-2.3.2/lib/cinch/bot.rb:264>>
+[2016/08/25 19:13:35.507] !! [Thread done] For #<Cinch::Handler @event=:connect pattern=#<Cinch::Pattern:0x00000000ce5978 @prefix=nil, @pattern=//, @suffix=nil>>: #<Thread:0x00000001a58510> -- 0 remaining.
+[2016/08/25 19:13:35.507] << JOIN #homescreen 
+[2016/08/25 19:13:35.508] << JOIN #fsf 
+[2016/08/25 19:13:35.746] >> :irc.losslessone.com 005 kekbot_ CALLERID CASEMAPPING=rfc1459 DEAF=D KICKLEN=160 MODES=4 NICKLEN=30 TOPICLEN=390 PREFIX=(qaohv)~&@%+ STATUSMSG=~&@%+ NETWORK=Rizon MAXLIST=beI:250 TARGMAX=ACCEPT:,KICK:1,LIST:1,NAMES:1,NOTICE:4,PRIVMSG:4,WHOIS:1 CHANTYPES=# :are supported by this server
+[2016/08/25 19:13:35.747] II Detected network: rizon
+[2016/08/25 19:13:35.747] >> :irc.losslessone.com 005 kekbot_ CHANLIMIT=#:75 CHANNELLEN=50 CHANMODES=beI,k,l,BCMNORScimnpstz KNOCK AWAYLEN=160 ELIST=CMNTU SAFELIST FNC NAMESX UHNAMES EXCEPTS=e INVEX=I :are supported by this server
+[2016/08/25 19:13:35.748] >> :irc.losslessone.com 042 kekbot_ 32CAAXB5J :your unique ID
+[2016/08/25 19:13:35.748] >> :irc.losslessone.com 251 kekbot_ :There are 43 users and 18066 invisible on 16 servers
+[2016/08/25 19:13:35.748] >> :irc.losslessone.com 252 kekbot_ 64 :IRC Operators online
+[2016/08/25 19:13:35.749] >> :irc.losslessone.com 253 kekbot_ 14 :unknown connection(s)
+[2016/08/25 19:13:35.749] >> :irc.losslessone.com 254 kekbot_ 19633 :channels formed
+[2016/08/25 19:13:35.749] >> :irc.losslessone.com 255 kekbot_ :I have 18109 clients and 16 servers
+[2016/08/25 19:13:35.749] >> :irc.losslessone.com 265 kekbot_ 18109 25635 :Current local users 18109, max 25635
+[2016/08/25 19:13:35.749] >> :irc.losslessone.com 266 kekbot_ 18109 25635 :Current global users 18109, max 25635
+[2016/08/25 19:13:35.750] >> :irc.losslessone.com 375 kekbot_ :- irc.losslessone.com Message of the Day - 
+[2016/08/25 19:13:35.750] >> :irc.losslessone.com 372 kekbot_ :- \u0002         \u000311oo\u0003                            \u0002
+[2016/08/25 19:13:35.750] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.750] >> :irc.losslessone.com 372 kekbot_ :- \u000288d888b. dP d888888b .d8888b. 88d888b. \u0002
+[2016/08/25 19:13:35.751] >> :irc.losslessone.com 372 kekbot_ :- \u000288'  `88 88    .d8P' 88'  `88 88'  `88 \u0002
+[2016/08/25 19:13:35.751] >> :irc.losslessone.com 372 kekbot_ :- \u0002\u00031188       88  .Y8P    88.  .88 88    88 \u0003\u0002
+[2016/08/25 19:13:35.751] >> :irc.losslessone.com 372 kekbot_ :- \u0002\u000311dP       dP d888888P `88888P' dP    dP\u0003\u0002
+[2016/08/25 19:13:35.752] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.752] >> :irc.losslessone.com 372 kekbot_ :- \u0002Rizon Chat Network -- http://rizon.net\u0002
+[2016/08/25 19:13:35.752] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.752] >> :irc.losslessone.com 372 kekbot_ :- Listening on ports: 6660 - 6669, 7000. SSL: 6697, 9999
+[2016/08/25 19:13:35.752] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.753] >> :irc.losslessone.com 372 kekbot_ :- \u0002Rules:\u0002
+[2016/08/25 19:13:35.753] >> :irc.losslessone.com 372 kekbot_ :- o No spamming or flooding
+[2016/08/25 19:13:35.753] >> :irc.losslessone.com 372 kekbot_ :- o No clones or malicious bots
+[2016/08/25 19:13:35.753] >> :irc.losslessone.com 372 kekbot_ :- o No takeovers
+[2016/08/25 19:13:35.753] >> :irc.losslessone.com 372 kekbot_ :- o No distribution of child pornography
+[2016/08/25 19:13:35.754] >> :irc.losslessone.com 372 kekbot_ :- o Clients must respond to VERSION requests
+[2016/08/25 19:13:35.754] >> :irc.losslessone.com 372 kekbot_ :- o Rizon staff may disconnect clients for any or no reason
+[2016/08/25 19:13:35.754] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.754] >> :irc.losslessone.com 372 kekbot_ :- \u0002First steps:\u0002
+[2016/08/25 19:13:35.755] >> :irc.losslessone.com 372 kekbot_ :- o To register your nick: \u0002/msg NickServ HELP\u0002
+[2016/08/25 19:13:35.755] >> :irc.losslessone.com 372 kekbot_ :- o To register your channel: \u0002/msg ChanServ HELP\u0002
+[2016/08/25 19:13:35.755] >> :irc.losslessone.com 372 kekbot_ :- o To get a vHost: \u0002/msg HostServ HELP REQUEST\u0002
+[2016/08/25 19:13:35.755] >> :irc.losslessone.com 372 kekbot_ :- o For other help with Rizon: \u0002/join #help\u0002
+[2016/08/25 19:13:35.756] >> :irc.losslessone.com 372 kekbot_ :- 
+[2016/08/25 19:13:35.756] >> :irc.losslessone.com 372 kekbot_ :- Usage of this network is a privilege, not a right. Rizon is a
+[2016/08/25 19:13:35.756] >> :irc.losslessone.com 372 kekbot_ :- transit provider, therefore no person or entity involved with
+[2016/08/25 19:13:35.756] >> :irc.losslessone.com 372 kekbot_ :- *.rizon.net or irc.losslessone.com takes any responsibility for
+[2016/08/25 19:13:35.756] >> :irc.losslessone.com 372 kekbot_ :- users' actions. Absolutely no warranty is expressed or implied.
+[2016/08/25 19:13:35.757] >> :irc.losslessone.com 376 kekbot_ :End of /MOTD command.
+[2016/08/25 19:13:35.757] >> :kekbot_!~cinch@Rizon-7513C575.lnse1.lon.bigpond.net.au MODE kekbot_ :+ix
+[2016/08/25 19:13:35.757] >> :Global!service@rizon.net NOTICE kekbot_ :[\u0002Logon News\u0002 - May 21 2011] \u0002First time on Rizon? Be sure to read the FAQ! http://s.rizon.net/FAQ
+[2016/08/25 19:13:35.757] >> :Global!service@rizon.net NOTICE kekbot_ :[\u0002Logon News\u0002 - Dec 16 2013] Own a large/active channel or plan to get one going? Please read http://s.rizon.net/authline
+[2016/08/25 19:13:35.758] >> :Global!service@rizon.net NOTICE kekbot_ :[\u0002Random News\u0002 - Nov 29 2013] Want to make your vhost shiny by adding colors to it? Try your luck in #VIzon
+[2016/08/25 19:13:35.758] >> :kekbot_!~cinch@Rizon-7513C575.lnse1.lon.bigpond.net.au JOIN :#homescreen
+[2016/08/25 19:13:35.759] << WHO #homescreen 
+[2016/08/25 19:13:35.759] << MODE #homescreen +b 
+[2016/08/25 19:13:35.759] << MODE #homescreen 
+[2016/08/25 19:13:35.759] >> :irc.losslessone.com 332 kekbot_ #homescreen :Channel for phone ricing // Rules and info: http://goo.gl7sw56V // https://plug.dj/homescreen // Now with spam protection
+[2016/08/25 19:13:35.760] >> :irc.losslessone.com 333 kekbot_ #homescreen afloat!uid119154@i.smell.like.windex 1471904714 
+[2016/08/25 19:13:35.760] >> :irc.losslessone.com 353 kekbot_ = #homescreen :kekbot_ jenkins %Spodes fsckoff +Cirno +Scrambo +greenbagels @Tabal +duckr c-pin ebrock ponies Kota ~@%adrift %TopKuk Zesty_ uquuu geg lel @varzeki +inexistence Wednesday Uncleleech mierths Foomn %Foom +lad %nv bulldozer +thursday +ChanStat linear @Acbn winny +UNOBot +Trivia +Internets avail rekyuu +infinity monte &@oink
+[2016/08/25 19:13:35.764] >> :irc.losslessone.com 366 kekbot_ #homescreen :End of /NAMES list.
+[2016/08/25 19:13:35.851] >> :py-ctcp!ctcp@ctcp-scanner.rizon.net PRIVMSG kekbot_ :\u0001VERSION\u0001
+[2016/08/25 19:13:35.994] >> :kekbot_!~cinch@Rizon-7513C575.lnse1.lon.bigpond.net.au JOIN :#fsf
+[2016/08/25 19:13:35.994] >> :irc.losslessone.com 332 kekbot_ #fsf :0DayMEME: ([13:46:46] lel: and DanDenzil was registered the same day HKM got banned from #8chan)
+[2016/08/25 19:13:35.995] >> :irc.losslessone.com 333 kekbot_ #fsf HKM!hkm@HKM.Global-CoN 1472064314 
+[2016/08/25 19:13:35.995] >> :irc.losslessone.com 353 kekbot_ * #fsf :kekbot_ @creamar +homosapien3000 +kekbot %HKM +STHNS +Hitechcg @guns @+suegar +Isk +geg +varzeki +hb +czaks +Rimu +LeDZeP +DosAmp &@lad +ChanStat +ano^ +television @+tard +RTFT %+installgen2 @+linear @%brushy @+RJ45
+[2016/08/25 19:13:35.998] >> :irc.losslessone.com 366 kekbot_ #fsf :End of /NAMES list.
+[2016/08/25 19:13:36.189] >> :ChanServ!service@rizon.net MODE #fsf +v kekbot_ 
+[2016/08/25 19:13:36.237] >> :irc.losslessone.com 352 kekbot_ #homescreen ~cinch Rizon-7513C575.lnse1.lon.bigpond.net.au * kekbot_ H :0 cinch
+[2016/08/25 19:13:36.238] >> :irc.losslessone.com 352 kekbot_ #homescreen ~jenkins erudite.memes.adept * jenkins Hr :0 jenkins
+[2016/08/25 19:13:36.238] >> :irc.losslessone.com 352 kekbot_ #homescreen ~Spodes smh.tbh.fam * Spodes Hr% :0 Spodes
+[2016/08/25 19:13:36.238] >> :irc.losslessone.com 352 kekbot_ #homescreen ~ttyfscker check.your.filesystem * fsckoff Hr :0 ttyfscker
+[2016/08/25 19:13:36.239] >> :irc.losslessone.com 352 kekbot_ #homescreen bixxx Dr.FeelLewd * Cirno Gr+ :0 bixxx
+[2016/08/25 19:13:36.239] >> :irc.losslessone.com 352 kekbot_ #homescreen Scrambo Rizon-7D2D3792.rizonbnc.us.rizon.net * Scrambo Gr+ :0 Scrambo
+[2016/08/25 19:13:36.239] >> :irc.losslessone.com 352 kekbot_ #homescreen GreenBagel touch.fluffy.tail * greenbagels Hr+ :0 GreenBagels
+[2016/08/25 19:13:36.240] >> :irc.losslessone.com 352 kekbot_ #homescreen Tabal the.bright.and.morning.star * Tabal Gr@ :0 Tabal
+[2016/08/25 19:13:36.240] >> :irc.losslessone.com 352 kekbot_ #homescreen the-duck quack.quack.quack * duckr G+ :0 the-duck
+[2016/08/25 19:13:36.240] >> :irc.losslessone.com 352 kekbot_ #homescreen c-pin Rizon-F6F93CDD.rizonbnc.us.rizon.net * c-pin Hr :0 c-pin
+[2016/08/25 19:13:36.241] >> :irc.losslessone.com 352 kekbot_ #homescreen ebrock colon.carat.closing.parentheses * ebrock Gr :0 ebrock
+[2016/08/25 19:13:36.241] >> :irc.losslessone.com 352 kekbot_ #homescreen Kitties friendship.is.magic.bitch * ponies Hr :0 Kitties
+[2016/08/25 19:13:36.242] >> :irc.losslessone.com 352 kekbot_ #homescreen Kota \u00034Killer.Operational.Targeting.Active\u0003 * Kota Hr :0 Kota
+[2016/08/25 19:13:36.242] >> :irc.losslessone.com 352 kekbot_ #homescreen adrift visions.of.excess * adrift Gr~ :0 adrift
+[2016/08/25 19:13:36.242] >> :irc.losslessone.com 352 kekbot_ #homescreen TopKuk baka.desu.senpai * TopKuk Gr% :0 TopKuk
+[2016/08/25 19:13:36.243] >> :irc.losslessone.com 352 kekbot_ #homescreen ~Zesty 3F2D060F.7C496744.320DC461.IP * Zesty_ Hr :0 Zesty
+[2016/08/25 19:13:36.243] >> :irc.losslessone.com 352 kekbot_ #homescreen ~uquuu 858BD23D:ED5D19AF:5A4D1A0C:IP * uquuu H :0 uquuu
+[2016/08/25 19:13:36.243] >> :irc.losslessone.com 352 kekbot_ #homescreen l hey.it.geg * geg Hr :0 l
+[2016/08/25 19:13:36.244] >> :irc.losslessone.com 352 kekbot_ #homescreen ~lel Rizon-F9692BD4.direcpc.com * lel Hr :0 lel
+[2016/08/25 19:13:36.244] >> :irc.losslessone.com 352 kekbot_ #homescreen ~varzeki cop.a.thong * varzeki Hr@ :0 varzeki
+[2016/08/25 19:13:36.244] >> :irc.losslessone.com 352 kekbot_ #homescreen ~inex a.e.s.t.h.e.t.i.c.s * inexistence Gr+ :0 inex
+[2016/08/25 19:13:36.244] >> :irc.losslessone.com 352 kekbot_ #homescreen Wednesday Rizon-D3F1148B.rizonbnc.eu.rizon.net * Wednesday G :0 Wednesday
+[2016/08/25 19:13:36.245] >> :irc.losslessone.com 352 kekbot_ #homescreen Uncleleech Rizon-65B47273.rizonbnc.eu.rizon.net * Uncleleech G :0 Uncleleech
+[2016/08/25 19:13:36.245] >> :irc.losslessone.com 352 kekbot_ #homescreen Nessowski proud.to.be.white * mierths Hr :0 Nessowski
+[2016/08/25 19:13:36.245] >> :irc.losslessone.com 352 kekbot_ #homescreen Foomn Rizon-EF85E551.rizonbnc.eu.rizon.net * Foomn G :0 Foomn
+[2016/08/25 19:13:36.246] >> :irc.losslessone.com 352 kekbot_ #homescreen Foom blue.remembered.hills * Foom Hr% :0 Foom
+[2016/08/25 19:13:36.246] >> :irc.losslessone.com 352 kekbot_ #homescreen ~lad get.ROMEO.ECHO.KILO.TANGO * lad Gr+ :0 lad
+[2016/08/25 19:13:36.246] >> :irc.losslessone.com 352 kekbot_ #homescreen ~~~nv~~ idia.corporation * nv Hr% :0 Le Ebin Maymays
+[2016/08/25 19:13:36.247] >> :irc.losslessone.com 352 kekbot_ #homescreen bulldozer infinite.loop * bulldozer Hr :0 bulldozer548
+[2016/08/25 19:13:36.247] >> :irc.losslessone.com 352 kekbot_ #homescreen ~thursday jup.iter * thursday Hr+ :0 #rice is hitler
+[2016/08/25 19:13:36.247] >> :irc.losslessone.com 352 kekbot_ #homescreen ~ChanStat chanstat.net * ChanStat Hr+ :0 ChanStat channel logging bot
+[2016/08/25 19:13:36.247] >> :irc.losslessone.com 352 kekbot_ #homescreen line r * linear Hr* :0 \u000313linear\u0003
+[2016/08/25 19:13:36.248] >> :irc.losslessone.com 352 kekbot_ #homescreen ~Acbn we.deliver.mcdonalds * Acbn Hr@ :0 realname
+[2016/08/25 19:13:36.248] >> :irc.losslessone.com 352 kekbot_ #homescreen ~winny vape.every.day * winny Gr :0 winny
+[2016/08/25 19:13:36.248] >> :irc.losslessone.com 352 kekbot_ #homescreen UNOBot play.uno.with.me * UNOBot Hr+ :0 Official Rizon UNOBot
+[2016/08/25 19:13:36.249] >> :irc.losslessone.com 352 kekbot_ #homescreen trivia trivia.rizon.net * Trivia Hr*+ :0 Trivia
+[2016/08/25 19:13:36.256] >> :irc.losslessone.com 352 kekbot_ #homescreen internets services.rizon.net * Internets Hr*+ :0 Network Services Bot
+[2016/08/25 19:13:36.257] >> :irc.losslessone.com 352 kekbot_ #homescreen ~avail Rizon-829108E8.us * avail H :0 avail
+[2016/08/25 19:13:36.257] >> :irc.losslessone.com 352 kekbot_ #homescreen ~rekyuu BB69F3F:F8E316A1:B7405362:IP * rekyuu Hr :0 rekyuu
+[2016/08/25 19:13:36.257] >> :irc.losslessone.com 352 kekbot_ #homescreen ~infinity i.like.lolis * infinity Hr+ :0 INFINITAAAHHHHH
+[2016/08/25 19:13:36.258] >> :irc.losslessone.com 352 kekbot_ #homescreen ~meh went.mad.in.Pyroland * monte Hr :0 meh
+[2016/08/25 19:13:36.258] >> :irc.losslessone.com 352 kekbot_ #homescreen piggy please.dont.have.sex.with.me.today * oink H& :0 squeeeeeel
+[2016/08/25 19:13:36.258] >> :irc.losslessone.com 315 kekbot_ #homescreen :End of /WHO list.
+[2016/08/25 19:13:36.259] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@adriftsux.wolowolo.kek.effay.jizzjazz oink!piggy@please.dont.have.sex.with.me.today 1471976594 
+[2016/08/25 19:13:36.259] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@Rizon-DB6EE411.cpe.net.cable.rogers.co adrift!adrift@visions.of.excess 1471913679 
+[2016/08/25 19:13:36.260] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@76994111.C8E528B2.A37FB0AB.IP oink!piggy@please.dont.have.sex.with.me.today 1471499542 
+[2016/08/25 19:13:36.260] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@2B828651.6AF0CE83.49529710.IP oink!piggy@please.dont.have.sex.with.me.today 1471369384 
+[2016/08/25 19:13:36.260] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@end.of.evangelion.wasnt.that.good oink!piggy@please.dont.have.sex.with.me.today 1471369318 
+[2016/08/25 19:13:36.261] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@73028217.F21254B1.C28E0B4.IP oink!piggy@please.dont.have.sex.with.me.today 1470804060 
+[2016/08/25 19:13:36.261] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*bot@*.B4C2EC1D.49529710.IP uncleleech!Uncleleech@licence.detection.van 1470645919 
+[2016/08/25 19:13:36.262] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*bot@*.F21254B1.C28E0B4.IP uncleleech!Uncleleech@licence.detection.van 1470594886 
+[2016/08/25 19:13:36.262] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*bot@*.82EE20E8.C28E0B4.IP uncleleech!Uncleleech@licence.detection.van 1470424258 
+[2016/08/25 19:13:36.263] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@D7939639.6AF0CE83.49529710.IP oink!piggy@please.dont.have.sex.with.me.today 1469869745 
+[2016/08/25 19:13:36.263] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*pirate@*.F21254B1.C28E0B4.IP uncleleech!Uncleleech@licence.detection.van 1469466687 
+[2016/08/25 19:13:36.264] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@ur.god ensorcell!ensorcell@ensor.cell 1465763195 
+[2016/08/25 19:13:36.264] >> :irc.losslessone.com 367 kekbot_ #homescreen *!kokaru@* ensorcell!ensorcell@ensor.cell 1465763185 
+[2016/08/25 19:13:36.265] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@xyz.zyx ensorcell!ensorcell@ensor.cell 1465763148 
+[2016/08/25 19:13:36.265] >> :irc.losslessone.com 367 kekbot_ #homescreen *!*@zetsu.metsu ensorcell!ensorcell@ensor.cell 1465754152 
+[2016/08/25 19:13:36.266] >> :irc.losslessone.com 368 kekbot_ #homescreen :End of Channel Ban List
+[2016/08/25 19:13:36.266] >> :irc.losslessone.com 324 kekbot_ #homescreen +Nntz 
+[2016/08/25 19:13:36.266] >> :irc.losslessone.com 329 kekbot_ #homescreen 1444438038 
+[2016/08/25 19:13:37.759] << WHO #fsf 
+[2016/08/25 19:13:38.045] >> :irc.losslessone.com 352 kekbot_ #fsf ~cinch Rizon-7513C575.lnse1.lon.bigpond.net.au * kekbot_ H+ :0 cinch
+[2016/08/25 19:13:38.045] >> :irc.losslessone.com 352 kekbot_ #fsf uid158196 sic.semper.tyrannis * creamar Hr@ :0 no
+[2016/08/25 19:13:38.046] >> :irc.losslessone.com 352 kekbot_ #fsf ~homosapie too.hard * homosapien3000 Hr+ :0 homosapien3000
+[2016/08/25 19:13:38.288] >> :irc.losslessone.com 352 kekbot_ #fsf ~cinch Rizon-89CD556A.socal.res.rr.com * kekbot H+ :0 cinch
+[2016/08/25 19:13:38.289] >> :irc.losslessone.com 352 kekbot_ #fsf hkm HKM.Global-CoN * HKM Hr% :0 hkm
+[2016/08/25 19:13:38.289] >> :irc.losslessone.com 352 kekbot_ #fsf ~HyperNode C9084CF5:87EF8037:86CC771E:IP * STHNS H+ :0 HKM.Global-CoN
+[2016/08/25 19:13:38.289] >> :irc.losslessone.com 352 kekbot_ #fsf ~Hitechcg 67.233.108.5 * Hitechcg Hr+ :0 Hitechcomputergeek
+[2016/08/25 19:13:38.289] >> :irc.losslessone.com 352 kekbot_ #fsf uid32020 xcxuxnxt.guns * guns Gr@ :0 cxuxnxt
+[2016/08/25 19:13:38.290] >> :irc.losslessone.com 352 kekbot_ #fsf ~suegar sic.semper.tyrannis * suegar Hr@ :0 David D. Davidson
+[2016/08/25 19:13:38.290] >> :irc.losslessone.com 352 kekbot_ #fsf Isk a.dinosaur.that.lives.in.your.mind * Isk Gr+ :0 Isk
+[2016/08/25 19:13:38.290] >> :irc.losslessone.com 352 kekbot_ #fsf l hey.it.geg * geg Hr+ :0 l
+[2016/08/25 19:13:38.290] >> :irc.losslessone.com 352 kekbot_ #fsf ~varzeki cop.a.thong * varzeki Hr+ :0 varzeki
+[2016/08/25 19:13:38.291] >> :irc.losslessone.com 352 kekbot_ #fsf ~wew2w hey.it.lel * hb Hr+ :0 wew1w
+[2016/08/25 19:13:38.291] >> :irc.losslessone.com 352 kekbot_ #fsf ~unspecifi Rizon-83A232F8.net * czaks Hr+ :0 Unknown
+[2016/08/25 19:13:38.292] >> :irc.losslessone.com 352 kekbot_ #fsf Rimu kame.hame.ha * Rimu Gr+ :0 Rimu
+[2016/08/25 19:13:38.292] >> :irc.losslessone.com 352 kekbot_ #fsf LeDZeP Rizon-E004A720.rizonbnc.eu.rizon.net * LeDZeP G+ :0 LeDZeP
+[2016/08/25 19:13:38.292] >> :irc.losslessone.com 352 kekbot_ #fsf DosAmp Rizon-73489BAE.rizonbnc.eu.rizon.net * DosAmp Gr+ :0 DosAmp
+[2016/08/25 19:13:38.293] >> :irc.losslessone.com 352 kekbot_ #fsf ~lad get.ROMEO.ECHO.KILO.TANGO * lad Gr& :0 lad
+[2016/08/25 19:13:38.293] >> :irc.losslessone.com 352 kekbot_ #fsf ~ChanStat chanstat.net * ChanStat Hr+ :0 ChanStat channel logging bot
+[2016/08/25 19:13:38.294] >> :irc.losslessone.com 352 kekbot_ #fsf ~z Rizon-42EF9288.net * ano^ Hr+ :0 z
+[2016/08/25 19:13:38.294] >> :irc.losslessone.com 352 kekbot_ #fsf ~tele 107B619A:CA571DC3:4F5BA0F0:IP * television Hr+ :0 television
+[2016/08/25 19:13:38.295] >> :irc.losslessone.com 352 kekbot_ #fsf ~tom to.potato * tard Hr@ :0 tom
+[2016/08/25 19:13:38.295] >> :irc.losslessone.com 352 kekbot_ #fsf ~RTFT is.a.pretty.princess * RTFT Hr+ :0 kcb
+[2016/08/25 19:13:38.296] >> :irc.losslessone.com 352 kekbot_ #fsf ~installge pasta.network * installgen2 Hr% :0 installgen2
+[2016/08/25 19:13:38.296] >> :irc.losslessone.com 352 kekbot_ #fsf line r * linear Hr*@ :0 \u000313linear\u0003
+[2016/08/25 19:13:38.296] >> :irc.losslessone.com 352 kekbot_ #fsf ~brushdemo install.funtoo * brushy Hr@ :0 brushdemon
+[2016/08/25 19:13:38.296] >> :irc.losslessone.com 352 kekbot_ #fsf ~GPRS vhosts.are.for.faggots * RJ45 Hr@ :0 RJ45
+[2016/08/25 19:13:38.297] >> :irc.losslessone.com 315 kekbot_ #fsf :End of /WHO list.
+[2016/08/25 19:13:39.760] << MODE #fsf +b 
+[2016/08/25 19:13:40.015] >> :irc.losslessone.com 367 kekbot_ #fsf *!*@Rizon-93B3FFBE.lightspeed.sntcca.sbcglobal.net ChanServ!service@rizon.net 1471778721 
+[2016/08/25 19:13:40.016] >> :irc.losslessone.com 367 kekbot_ #fsf *!*@mighty.benis lad!~goodlad@get.ROMEO.ECHO.KILO.TANGO 1471508079 
+[2016/08/25 19:13:40.016] >> :irc.losslessone.com 367 kekbot_ #fsf xz!~xz@x.z fatcunt!~fat@31C324CE.F21254B1.C28E0B4.IP 1471457690 
+[2016/08/25 19:13:40.258] >> :irc.losslessone.com 367 kekbot_ #fsf (It's!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455835 
+[2016/08/25 19:13:40.259] >> :irc.losslessone.com 367 kekbot_ #fsf (Sing!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455833 
+[2016/08/25 19:13:40.259] >> :irc.losslessone.com 367 kekbot_ #fsf (Yeah,!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455832 
+[2016/08/25 19:13:40.259] >> :irc.losslessone.com 367 kekbot_ #fsf (I'm!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455807 
+[2016/08/25 19:13:40.260] >> :irc.losslessone.com 367 kekbot_ #fsf Yeah!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455802 
+[2016/08/25 19:13:40.260] >> :irc.losslessone.com 367 kekbot_ #fsf I'm!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455798 
+[2016/08/25 19:13:40.260] >> :irc.losslessone.com 367 kekbot_ #fsf Where's!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455796 
+[2016/08/25 19:13:40.261] >> :irc.losslessone.com 367 kekbot_ #fsf (verse)!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455795 
+[2016/08/25 19:13:40.261] >> :irc.losslessone.com 367 kekbot_ #fsf Yo!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455790 
+[2016/08/25 19:13:40.261] >> :irc.losslessone.com 367 kekbot_ #fsf Ski+bi!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455789 
+[2016/08/25 19:13:40.261] >> :irc.losslessone.com 367 kekbot_ #fsf (scatting)!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455788 
+[2016/08/25 19:13:40.262] >> :irc.losslessone.com 367 kekbot_ #fsf Be!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455784 
+[2016/08/25 19:13:40.262] >> :irc.losslessone.com 367 kekbot_ #fsf Bop!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455784 
+[2016/08/25 19:13:40.262] >> :irc.losslessone.com 367 kekbot_ #fsf Ba-da+ba-da+ba+be!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455783 
+[2016/08/25 19:13:40.263] >> :irc.losslessone.com 367 kekbot_ #fsf (chorus)!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455783 
+[2016/08/25 19:13:40.263] >> :irc.losslessone.com 367 kekbot_ #fsf Things!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455781 
+[2016/08/25 19:13:40.263] >> :irc.losslessone.com 367 kekbot_ #fsf While!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455780 
+[2016/08/25 19:13:40.264] >> :irc.losslessone.com 367 kekbot_ #fsf Well,!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455779 
+[2016/08/25 19:13:40.264] >> :irc.losslessone.com 367 kekbot_ #fsf I!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455778 
+[2016/08/25 19:13:40.264] >> :irc.losslessone.com 367 kekbot_ #fsf oobie!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455765 
+[2016/08/25 19:13:40.265] >> :irc.losslessone.com 367 kekbot_ #fsf scoobie!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455765 
+[2016/08/25 19:13:40.265] >> :irc.losslessone.com 367 kekbot_ #fsf It's!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455765 
+[2016/08/25 19:13:40.265] >> :irc.losslessone.com 367 kekbot_ #fsf Yeah,!*@* happybot!~bot@31C324CE.F21254B1.C28E0B4.IP 1471455762 
+[2016/08/25 19:13:40.266] >> :irc.losslessone.com 367 kekbot_ #fsf chrissy!*@* fatcunt!~fat@17B5EA78.B4C2EC1D.49529710.IP 1471188544 
+[2016/08/25 19:13:40.266] >> :irc.losslessone.com 368 kekbot_ #fsf :End of Channel Ban List
+[2016/08/25 19:13:41.410] >> :varzeki!~varzeki@cop.a.thong PRIVMSG #homescreen :.ignore kekbot
+[2016/08/25 19:13:41.415] !! [New thread] For #<Cinch::Handler @event=:message pattern=#<Cinch::Pattern:0x00000000ec9528 @prefix=nil, @pattern=/kekbot/, @suffix=nil>>: #<Thread:0x0000000186f7d0> -- 1 in total.
+[2016/08/25 19:13:41.416] !! [Thread done] For #<Cinch::Handler @event=:message pattern=#<Cinch::Pattern:0x00000000ec9528 @prefix=nil, @pattern=/kekbot/, @suffix=nil>>: #<Thread:0x0000000186f7d0> -- 0 remaining.
+[2016/08/25 19:13:41.416] !! [New thread] For #<Cinch::Handler @event=:message pattern=#<Cinch::Pattern:0x00000000ce93e8 @prefix=nil, @pattern=/^.ignore (.+)/, @suffix=nil>>: #<Thread:0x0000000186f410> -- 0 in total.
+[2016/08/25 19:13:41.420] !! /home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:345:in `rescue in establish_connection': Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED) (Redis::CannotConnectError)
+[2016/08/25 19:13:41.420] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:331:in `establish_connection'
+[2016/08/25 19:13:41.420] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:101:in `block in connect'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:293:in `with_reconnect'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:100:in `connect'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:364:in `ensure_connected'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:221:in `block in process'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:306:in `logging'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:220:in `process'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis/client.rb:120:in `call'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis.rb:1393:in `block in smembers'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis.rb:58:in `block in synchronize'
+[2016/08/25 19:13:41.421] !! 	/usr/lib64/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis.rb:58:in `synchronize'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/redis-3.3.0/lib/redis.rb:1392:in `smembers'
+[2016/08/25 19:13:41.421] !! 	kekbot.rb:340:in `block (2 levels) in <main>'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/cinch-2.3.2/lib/cinch/handler.rb:97:in `instance_exec'
+[2016/08/25 19:13:41.421] !! 	/home/varzeki/.gem/ruby/2.1.0/gems/cinch-2.3.2/lib/cinch/handler.rb:97:in `block in call'
+[2016/08/25 19:13:41.422] !! [Thread done] For #<Cinch::Handler @event=:message pattern=#<Cinch::Pattern:0x00000000ce93e8 @prefix=nil, @pattern=/^.ignore (.+)/, @suffix=nil>>: #<Thread:0x0000000186f410> -- 0 remaining.
+[2016/08/25 19:13:41.761] << MODE #fsf 
+[2016/08/25 19:13:42.090] >> :irc.losslessone.com 324 kekbot_ #fsf +mptz 
+[2016/08/25 19:13:42.090] >> :irc.losslessone.com 329 kekbot_ #fsf 1470851528 
+[2016/08/25 19:13:43.761] << PRIVMSG #homescreen :hello hello
