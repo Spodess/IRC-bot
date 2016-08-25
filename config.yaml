@@ -1,0 +1,8 @@
+redis:
+    port: 6379
+
+config:
+    server: irc.rizon.net
+    port: 6667
+    nick: kekbot
+    channels: ['#homescreen', '#fsf']
