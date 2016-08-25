@@ -16,15 +16,24 @@ botAdmins = ['Spodes', 'varzeki']
 
 #Helper Functions
 def useAdmin(m)
-    return (m.channel.opped?(m.user) or botAdmins.include? m.user.to_s)
+    puts m.user.to_s
+    if botAdmins.include?(m.user.to_s)
+        puts "include admin"
+    else
+        puts "exclude admin"
+    end
+    return (m.channel.opped?(m.user) or botAdmins.include?(m.user.to_s))
 end
 
 def useMod(m)
-    return (useAdmin(m) or m.channel.half_opped? m.user)
+    return (useAdmin(m) or m.channel.half_opped?(m.user))
 end
 
 def useBot(m)
-    return (useMod(m) or (m.channel.voiced? m.user and not redis.smembers("ignored").include? m.user.to_s))
+    if not redis.smembers("ignored").include?(m.user.to_s)
+        puts "not ignored"
+    end
+    return (useMod(m) or (m.channel.voiced?(m.user) and not redis.smembers("ignored").include?(m.user.to_s)))
 end
 
 def useAbusive(m)
