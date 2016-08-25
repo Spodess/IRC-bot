@@ -7,37 +7,32 @@ require 'yaml'
 
 #Load config
 config = YAML.load_file("config.yaml")
-puts config['config']['channels']
-#Configures redis for persistent storage - reduces I/O, allows multiple clients to sync
-redis = Redis.new(:port => config['redis']['port'])
+
+#Configures $redis for persistent storage - reduces I/O, allows multiple clients to sync
+$redis = Redis.new(:port => config['redis']['port'])
 
 #Hard coded admins
+$botAdmins = ['Spodes', 'varzeki']
 
 #Helper Functions
 def useAdmin(m)
-    puts m.user.to_s
-    return m.channel.opped?(m.user)
+    return (m.channel.opped?(m.user) or $botAdmins.include? m.user.to_s)
 end
 
 def useMod(m)
-    return (useAdmin(m) or m.channel.half_opped?(m.user))
+    return (useAdmin(m) or m.channel.half_opped? m.user)
 end
 
 def useBot(m)
-    if not redis.smembers("ignored").include?(m.user.to_s)
-        puts "not ignored"
-    else
-        puts "ignored"
-    end
-    return (useMod(m) or (m.channel.voiced?(m.user) and not redis.smembers("ignored").include?(m.user.to_s)))
+    return (useMod(m) or (m.channel.voiced? m.user and not $redis.smembers("ignored").include? m.user.to_s))
 end
 
 def useAbusive(m)
-    return (useAdmin(m) or (useBot(m) and (not redis.smembers("timed").include? m.user.to_s)))
+    return (useAdmin(m) or (useBot(m) and (not $redis.smembers("timed").include? m.user.to_s)))
 end
 
 def setAbusive(m)
-    redis.sadd("timed", m.user.to_s)
+    $redis.sadd("timed", m.user.to_s)
 end
 
 #Bot
@@ -54,8 +49,8 @@ kekbot = Cinch::Bot.new do
 
     #Responsible for untiming users from abusive commands
     Timer(150) {
-        for i in redis.smembers("timed") do
-            redis.srem("timed", i)
+        for i in $redis.smembers("timed") do
+            $redis.srem("timed", i)
         end
     }
 
@@ -342,8 +337,8 @@ kekbot = Cinch::Bot.new do
 
     on :message, /^.ignore (.+)/ do |m, user|
         if useAdmin(m)
-            if not redis.smembers("ignored").include? user
-                redis.sadd("ignored", user)
+            if not $redis.smembers("ignored").include? user
+                $redis.sadd("ignored", user)
                 m.reply(user.concat(" is being ignored!"))
             else
                 m.reply(user.concat(" is already being ignored!"))
@@ -353,8 +348,8 @@ kekbot = Cinch::Bot.new do
 
     on :message, /^.unignore (.+)/ do |m, user|
         if useAdmin(m)
-            if redis.smembers("ignored").include? user
-                redis.srem("ignored", user)
+            if $redis.smembers("ignored").include? user
+                $redis.srem("ignored", user)
                 m.reply(user.concat(" is no longer being ignored!"))
             else
                 m.reply(user.concat(" wasn't on the ignore list!"))
@@ -370,3 +365,4 @@ kekbot.loggers.first.level = :info
 
 #Start
 kekbot.start
+
