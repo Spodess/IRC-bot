@@ -12,17 +12,11 @@ puts config['config']['channels']
 redis = Redis.new(:port => config['redis']['port'])
 
 #Hard coded admins
-botAdmins = ['Spodes', 'varzeki']
 
 #Helper Functions
 def useAdmin(m)
     puts m.user.to_s
-    if botAdmins.include?(m.user.to_s)
-        puts "include admin"
-    else
-        puts "exclude admin"
-    end
-    return (m.channel.opped?(m.user) or botAdmins.include?(m.user.to_s))
+    return m.channel.opped?(m.user)
 end
 
 def useMod(m)
@@ -32,6 +26,8 @@ end
 def useBot(m)
     if not redis.smembers("ignored").include?(m.user.to_s)
         puts "not ignored"
+    else
+        puts "ignored"
     end
     return (useMod(m) or (m.channel.voiced?(m.user) and not redis.smembers("ignored").include?(m.user.to_s)))
 end
