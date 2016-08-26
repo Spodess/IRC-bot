@@ -431,7 +431,7 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, /^.ignored (.+)/ do |m, user|
+    on :message, /^.ignored/ do |m|
         if useAdmin(m)
             lst = $redis.smembers("ignored")
             out = ""
