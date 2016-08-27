@@ -12,7 +12,7 @@ config = YAML.load_file("config.yaml")
 $redis = Redis.new(:port => config['redis']['port'])
 
 #Hard coded admins
-$botAdmins = ['Spodes', 'varzeki']
+$botAdmins = ['Spodes', 'varzeki', 'adrift', 'afloat']
 
 #Helper Functions
 def useAdmin(m)
@@ -40,12 +40,16 @@ kekbot = Cinch::Bot.new do
 
     #Initial Bot Config
     configure do |c|
+        c.realname = "kekbot"
         c.server = config['config']['server']
         c.port = config['config']['port'].to_s
         c.nick = config['config']['nick'].to_s
         c.channels = config['config']['channels']
     end
 
+    on :connect do |m|
+        User('NickServ').send("identify dudeweedlmao")
+    end
 
     #Responsible for untiming users from abusive commands
     Timer(150) {
@@ -54,151 +58,215 @@ kekbot = Cinch::Bot.new do
         end
     }
 
-
-
-
     #Responses
+    on :ban do |m, ban|
+        m.reply("Damn, that motherfucka just got BANNED")
+    end
+
     on :message, "ye" do |m|
-        m.reply "YEEEE BOI"
+        if useBot(m)
+            m.reply "YEEEE BOI"
+        end
     end
 
     on :message, "Kek" do |m|
-        m.reply "kek"
+        if useBot(m)
+            m.reply "kek"
+        end
     end
 
     on :message, "woah" do |m|
-        m.reply "whoa*"
-    end
-
-    on :message, ".acbn" do |m|
-        m.reply "furry"
+        if useBot(m)
+            m.reply "whoa*"
+        end
     end
 
     on :message, ":D" do |m|
-        m.reply ":DDDD"
+        if useBot(m)
+            m.reply ":DDDD"
+        end
     end
 
     on :message, /^fuck you/i do |m|
-        m.reply "No fuck you, #{m.user.nick}"
+        if useBot(m)
+            m.reply "No fuck you, #{m.user.nick}"
+        end
     end
 
     on :message, /^fuck u/i do |m|
-        m.reply "No fuck you, #{m.user.nick}"
+        if useBot(m)
+            m.reply "No fuck you, #{m.user.nick}"
+        end
     end
 
     on :message, /james/i do |m|
-        m.reply "Speaking of James, that's Tomoko right?"
+        if useBot(m)
+            m.reply "Speaking of James, that's Tomoko right?"
+        end
     end
 
     on :message, /^hello$/i do |m|
-        m.reply "Hello, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Hello, #{m.user.nick}"
+        end
     end
 
     on :message, /^hey/i do |m|
-        m.reply "Hello, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Hello, #{m.user.nick}"
+        end
     end
 
     on :message, /^hi$/i do |m|
-        m.reply "Hello, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Hello, #{m.user.nick}"
+        end
     end
 
     on :message, /^yo$/i do |m|
-        m.reply "Hello, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Hello, #{m.user.nick}"
+        end
     end
 
     on :message, /^sup$/i do |m|
-        m.reply "Hello, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Hello, #{m.user.nick}"
+        end
     end
 
     on :message, /^cya$/i do |m|
-        m.reply "Cya later, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Cya later, #{m.user.nick}"
+        end
     end
 
     on :message, /^bye$/i do |m|
-        m.reply "Cya later, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Cya later, #{m.user.nick}"
+        end
     end
 
     on :message, /^goodbye$/i do |m|
-        m.reply "Cya later, #{m.user.nick}"
+        if useBot(m)
+            m.reply "Cya later, #{m.user.nick}"
+        end
     end
 
     on :message, /420/i do |m|
-        m.reply "blaze it fegit"
+        if useBot(m)
+            m.reply "blaze it fegit"
+        end
     end
 
     on :message, /ayy/i do |m|
-        m.reply "lmao"
+        if useBot(m)
+            m.reply "lmao"
+        end
     end
 
     on :message, /dude/i do |m|
-        m.reply "weed"
-        m.reply "lmao"
+        if useBot(m)
+            m.reply "weed"
+            m.reply "lmao"
+        end
     end
 
     on :message, /hehe/i do |m|
-        m.reply "xd"
+        if useBot(m)
+            m.reply "xd"
+        end
     end
 
     on :message, /<3/ do |m|
-        m.reply "<3333"
+        if useBot(m)
+            m.reply "<3333"
+        end
     end
 
     on :message, /kekbot/ do |m|
-        m.reply "hello hello"
+        if useBot(m)
+            m.reply "hello hello"
+        end
     end
 
     on :message, /help/i do |m|
-        m.reply "install gentoo"
+        if useBot(m)
+            m.reply "install gentoo"
+        end
     end
 
     on :message, "^" do |m|
-        m.reply "^"
+        if useBot(m)
+            m.reply "^"
+        end
     end
 
     on :message, "kek" do |m|
-        m.reply "kek"
+        if useBot(m)
+            m.reply "kek"
+        end
     end
 
     on :message, "wew" do |m|
-        m.reply "lad"
+        if useBot(m)
+            m.reply "lad"
+        end
     end
 
     on :message, "bot" do |m|
-        m.reply "Hello!"
+        if useBot(m)
+            m.reply "Hello!"
+        end
     end
 
     on :message, /navy/i do |m|
-        m.reply "What the fuck did you just fucking say about me, you little bitch?"
+        if useBot(m)
+            m.reply "What the fuck did you just fucking say about me, you little bitch?"
+        end
     end
 
     on :message, "o shit" do |m|
-        m.reply "waddup"
+        if useBot(m)
+            m.reply "waddup"
+        end
     end
 
     on :message, "oshit" do |m|
-        m.reply "waddup"
+        if useBot(m)
+            m.reply "waddup"
+        end
     end
 
     on :message, /^hey guys!$/i do |m|
-        m.reply "Welcome to EB Games."
+        if useBot(m)
+            m.reply "Welcome to EB Games."
+        end
     end
 
     on :message, "lok" do |m|
-        m.reply "lol"
+        if useBot(m)
+            m.reply "lol"
+        end
     end
 
     on :message, "??" do |m|
-        m.reply "? ???????????????????????????????"
+        if useBot(m)
+            m.reply "? ???????????????????????????????"
+        end
     end
 
     on :message, /^meme$/i do |m|
-        m.reply "i love memes!"
+        if useBot(m)
+            m.reply "i love memes!"
+        end
     end
 
     on :message, "kk" do |m|
-        m.reply "bb"
+        if useBot(m)
+            m.reply "bb"
+        end
     end
-
 
     #Commands
 
@@ -249,6 +317,12 @@ kekbot = Cinch::Bot.new do
         end
     end
 
+    on :message, ".acbn" do |m|
+        if useBot(m)
+            m.reply "furry"
+        end
+    end
+
     on :message, /^.eat (.+)/ do |m, target|
         if useBot(m)
             m.channel.action("eats ".concat(target))
@@ -262,7 +336,7 @@ kekbot = Cinch::Bot.new do
     end
 
     on :message, /^.rwb (.+)/ do |m, words|
-        if useBot(m) 
+        if useBot(m)
             out = ""
             col = 0
             w_arr = words.split(" ")
@@ -354,6 +428,15 @@ kekbot = Cinch::Bot.new do
             else
                 m.reply(user.concat(" wasn't on the ignore list!"))
             end
+        end
+    end
+
+    on :message, /^.ignored/ do |m|
+        if useAdmin(m)
+            lst = $redis.smembers("ignored")
+            out = ""
+            lst.each {|i| out.concat(i).concat(" ")}
+            m.reply(out)
         end
     end
 end
