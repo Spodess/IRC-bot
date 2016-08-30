@@ -6,3 +6,5 @@ config:
     port: 6667
     nick: kekbot
     channels: ['#homescreen', '#fsf']
+    realname: kekbot
+    password: none

@@ -14,6 +14,21 @@ $redis = Redis.new(:port => config['redis']['port'])
 #Hard coded admins
 $botAdmins = ['Spodes', 'varzeki', 'adrift', 'afloat']
 
+#Response Hash
+responses = Hash.new
+responses['kek'] = 'kek'
+responses['Kek'] = 'kek'
+responses['ye'] = 'YEEEE BOI'
+responses['kk'] = 'bb'
+responses['wew'] = 'lad'
+responses['woah'] = 'whoa*'
+responses[':D'] = ':DDDD'
+responses['bot'] = 'Hello!'
+responses['oshit'] = 'waddup'
+responses['o shit'] = 'waddup'
+responses['lok'] = 'lol'
+responses['?'] = '?? ????????'
+
 #Helper Functions
 def useAdmin(m)
     return (m.channel.opped?(m.user) or $botAdmins.include? m.user.to_s)
@@ -40,7 +55,7 @@ kekbot = Cinch::Bot.new do
 
     #Initial Bot Config
     configure do |c|
-        c.realname = "kekbot"
+        c.realname = config['config']['realname']
         c.server = config['config']['server']
         c.port = config['config']['port'].to_s
         c.nick = config['config']['nick'].to_s
@@ -48,7 +63,7 @@ kekbot = Cinch::Bot.new do
     end
 
     on :connect do |m|
-        User('NickServ').send("identify password")
+        User('NickServ').send("identify ".concat(config['config']['password']))
     end
 
     #Responsible for untiming users from abusive commands
@@ -63,30 +78,13 @@ kekbot = Cinch::Bot.new do
         m.reply("Damn, that motherfucka just got BANNED")
     end
 
-    on :message, "ye" do |m|
-        if useBot(m)
-            m.reply "YEEEE BOI"
+    on :message do |m|
+        if useBot(m) and responses.has_key?(m.message)
+	    m.reply(responses[m.message])
         end
     end
 
-    on :message, "Kek" do |m|
-        if useBot(m)
-            m.reply "kek"
-        end
-    end
-
-    on :message, "woah" do |m|
-        if useBot(m)
-            m.reply "whoa*"
-        end
-    end
-
-    on :message, ":D" do |m|
-        if useBot(m)
-            m.reply ":DDDD"
-        end
-    end
-
+    #Regex responses
     on :message, /^fuck you/i do |m|
         if useBot(m)
             m.reply "No fuck you, #{m.user.nick}"
@@ -196,27 +194,9 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, "^" do |m|
+    on :message, /^\^/ do |m|
         if useBot(m)
             m.reply "^"
-        end
-    end
-
-    on :message, "kek" do |m|
-        if useBot(m)
-            m.reply "kek"
-        end
-    end
-
-    on :message, "wew" do |m|
-        if useBot(m)
-            m.reply "lad"
-        end
-    end
-
-    on :message, "bot" do |m|
-        if useBot(m)
-            m.reply "Hello!"
         end
     end
 
@@ -226,45 +206,15 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, "o shit" do |m|
-        if useBot(m)
-            m.reply "waddup"
-        end
-    end
-
-    on :message, "oshit" do |m|
-        if useBot(m)
-            m.reply "waddup"
-        end
-    end
-
     on :message, /^hey guys!$/i do |m|
         if useBot(m)
             m.reply "Welcome to EB Games."
         end
     end
 
-    on :message, "lok" do |m|
-        if useBot(m)
-            m.reply "lol"
-        end
-    end
-
-    on :message, "??" do |m|
-        if useBot(m)
-            m.reply "? ???????????????????????????????"
-        end
-    end
-
     on :message, /^meme$/i do |m|
         if useBot(m)
             m.reply "i love memes!"
-        end
-    end
-
-    on :message, "kk" do |m|
-        if useBot(m)
-            m.reply "bb"
         end
     end
 
