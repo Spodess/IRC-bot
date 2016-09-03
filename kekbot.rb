@@ -398,4 +398,3 @@ kekbot.loggers.first.level = :info
 
 #Start
 kekbot.start
-
