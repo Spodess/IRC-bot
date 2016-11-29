@@ -1,6 +1,6 @@
 ## Synopsis
 
-Kekbot is an IRC bot built using the Cinch framework.
+Kekbot is an IRC bot built using the Cinch framework and [stolen from Spodes](https://github.com/Spodess/IRC-Bot).
 
 ## Installation
 
@@ -18,5 +18,4 @@ Kekbot is an IRC bot built using the Cinch framework.
 
 ## Contributors
 
-Currently maintained by Spodes and Varzeki.
-
+Currently maintained by [kjensenxz](https://github.com/kjensenxz). Previously maintained by [Spodes](https://github.com/Spodess) and [Varzeki](https://github.com/Varzeki).
