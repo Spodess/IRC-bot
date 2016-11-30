@@ -18,6 +18,7 @@ for i in ['port', 'host', 'password', 'path']
 end
 x << "}"
 $redis = Redis.new(eval(x))
+$redis.select config['config']['database'].to_i || 1
 
 # Hard coded admins
 $botAdmins = ['Spodes', 'varzeki','adrift', 'afloat', 'joe_dirt']
@@ -99,13 +100,17 @@ kekbot = Cinch::Bot.new do
         c.server = config['config']['server']
         c.port = config['config']['port'].to_s
         c.nick = config['config']['nick'].to_s
+        c.password = config['config']['password'].to_s
+        c.ssl.use = config['config']['ssl']
+        c.ssl.verify = false
         $nick = c.nick
         c.channels = config['config']['channels']
     end
-
-    on :connect do |m|
-        User('NickServ').send("identify #{config['config']['password']}")
-    end
+    if config['config']['nickserv'] == "yes"
+       on :connect do |m|
+           User('NickServ').send("identify #{config['config']['nspassword']}")
+       end
+   end
 
     # Responsible for untiming users from abusive commands
     Timer(150) {
