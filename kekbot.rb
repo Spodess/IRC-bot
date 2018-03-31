@@ -14,6 +14,22 @@ $redis = Redis.new(:port => config['redis']['port'])
 #Hard coded admins
 $botAdmins = ['Spodes', 'varzeki', 'adrift', 'afloat']
 
+#Response Hash
+responses = Hash.new
+responses['kek'] = 'kek'
+responses['Kek'] = 'kek'
+responses['ye'] = 'YEEEE BOI'
+responses['kk'] = 'bb'
+responses['wew'] = 'lad'
+responses['woah'] = 'whoa*'
+responses[':D'] = ':DDDD'
+responses['bot'] = 'Hello!'
+responses['oshit'] = 'waddup'
+responses['o shit'] = 'waddup'
+responses['lok'] = 'lol'
+responses['?'] = '?? ????????'
+responses['quek'] = 'quek'
+
 #Helper Functions
 def useAdmin(m)
     return (m.channel.opped?(m.user) or $botAdmins.include? m.user.to_s)
@@ -40,7 +56,7 @@ kekbot = Cinch::Bot.new do
 
     #Initial Bot Config
     configure do |c|
-        c.realname = "kekbot"
+        c.realname = config['config']['realname']
         c.server = config['config']['server']
         c.port = config['config']['port'].to_s
         c.nick = config['config']['nick'].to_s
@@ -48,7 +64,7 @@ kekbot = Cinch::Bot.new do
     end
 
     on :connect do |m|
-        User('NickServ').send("identify dudeweedlmao")
+        User('NickServ').send("identify ".concat(config['config']['password']))
     end
 
     #Responsible for untiming users from abusive commands
@@ -57,36 +73,26 @@ kekbot = Cinch::Bot.new do
             $redis.srem("timed", i)
         end
     }
-
+	
+	#Auto rejoin
+    on :leaving do |m, user|
+        if user == 'kekbot'
+            m.channel.join
+        end
+    end
+	
     #Responses
     on :ban do |m, ban|
         m.reply("Damn, that motherfucka just got BANNED")
     end
 
-    on :message, "ye" do |m|
-        if useBot(m)
-            m.reply "YEEEE BOI"
+    on :message do |m|
+        if useBot(m) and responses.has_key?(m.message)
+	    m.reply(responses[m.message])
         end
     end
 
-    on :message, "Kek" do |m|
-        if useBot(m)
-            m.reply "kek"
-        end
-    end
-
-    on :message, "woah" do |m|
-        if useBot(m)
-            m.reply "whoa*"
-        end
-    end
-
-    on :message, ":D" do |m|
-        if useBot(m)
-            m.reply ":DDDD"
-        end
-    end
-
+    #Regex responses
     on :message, /^fuck you/i do |m|
         if useBot(m)
             m.reply "No fuck you, #{m.user.nick}"
@@ -101,7 +107,7 @@ kekbot = Cinch::Bot.new do
 
     on :message, /james/i do |m|
         if useBot(m)
-            m.reply "Speaking of James, that's Tomoko right?"
+            m.reply "Speaking of James, that's Tomoko, right?"
         end
     end
 
@@ -171,6 +177,12 @@ kekbot = Cinch::Bot.new do
             m.reply "lmao"
         end
     end
+	
+	on :message, /discord/i do |m|
+        if useBot(m)
+            m.reply "https://u.sicp.me/f7DrE.png"
+        end
+    end
 
     on :message, /hehe/i do |m|
         if useBot(m)
@@ -196,27 +208,9 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, "^" do |m|
+    on :message, /^\^/ do |m|
         if useBot(m)
             m.reply "^"
-        end
-    end
-
-    on :message, "kek" do |m|
-        if useBot(m)
-            m.reply "kek"
-        end
-    end
-
-    on :message, "wew" do |m|
-        if useBot(m)
-            m.reply "lad"
-        end
-    end
-
-    on :message, "bot" do |m|
-        if useBot(m)
-            m.reply "Hello!"
         end
     end
 
@@ -226,33 +220,9 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, "o shit" do |m|
-        if useBot(m)
-            m.reply "waddup"
-        end
-    end
-
-    on :message, "oshit" do |m|
-        if useBot(m)
-            m.reply "waddup"
-        end
-    end
-
     on :message, /^hey guys!$/i do |m|
         if useBot(m)
             m.reply "Welcome to EB Games."
-        end
-    end
-
-    on :message, "lok" do |m|
-        if useBot(m)
-            m.reply "lol"
-        end
-    end
-
-    on :message, "??" do |m|
-        if useBot(m)
-            m.reply "? ???????????????????????????????"
         end
     end
 
@@ -262,21 +232,15 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, "kk" do |m|
-        if useBot(m)
-            m.reply "bb"
-        end
-    end
-
     #Commands
 
     #Open
     on :message, ".bots" do |m|
-        m.reply "What's up fam? \x02[Ruby]\x02 | Source: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
+        m.reply "Reporting in!  [Ruby] See https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
     end
 
     on :message, ".source" do |m|
-        m.reply "Source \x02[Ruby]\x02: https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
+        m.reply "Reporting in!  [Ruby] See https://github.com/Spodess/IRC-bot/blob/master/kekbot.rb"
     end
 
     #useBot
@@ -292,7 +256,21 @@ kekbot = Cinch::Bot.new do
         end
     end
 
-    on :message, /^.rwg (.+)/ do |m, words|
+    on :message, /^.blue (.+)/ do |m, words|
+        if useBot(m)
+            out = ""
+            col = 0
+            w_arr = words.split(" ")
+            w_arr.each do |word|
+                if col == 0
+                    out.concat(Format(:blue, word).concat(" "))
+                end
+            end
+            m.reply(out)
+        end
+    end
+	
+	 on :message, /^.red (.+)/ do |m, words|
         if useBot(m)
             out = ""
             col = 0
@@ -301,16 +279,47 @@ kekbot = Cinch::Bot.new do
                 if col == 0
                     out.concat(Format(:red, word).concat(" "))
                 end
-
-                if col == 1
-                    out.concat(Format(:white, word).concat(" "))
+            end
+            m.reply(out)
+        end
+    end
+	
+	 on :message, /^.purple (.+)/ do |m, words|
+        if useBot(m)
+            out = ""
+            col = 0
+            w_arr = words.split(" ")
+            w_arr.each do |word|
+                if col == 0
+                    out.concat(Format(:purple, word).concat(" "))
                 end
-
-                if col == 2
+            end
+            m.reply(out)
+        end
+    end
+	
+	 on :message, /^.pink (.+)/ do |m, words|
+        if useBot(m)
+            out = ""
+            col = 0
+            w_arr = words.split(" ")
+            w_arr.each do |word|
+                if col == 0
+                    out.concat(Format(:pink, word).concat(" "))
+                end
+            end
+            m.reply(out)
+        end
+    end
+	
+	    on :message, /^.gt (.+)/ do |m, words|
+        if useBot(m)
+            out = ""
+            col = 0
+            w_arr = words.split(" ")
+            w_arr.each do |word|
+                if col == 0
                     out.concat(Format(:green, word).concat(" "))
-                    col = 0
-                else
-                    col = col + 1
                 end
             end
             m.reply(out)
@@ -332,31 +341,6 @@ kekbot = Cinch::Bot.new do
     on :message, /^.shiton (.+)/ do |m, target|
         if useBot(m)
             m.channel.action("takes a liquidy; massive stinky shit onto ".concat(target))
-        end
-    end
-
-    on :message, /^.rwb (.+)/ do |m, words|
-        if useBot(m)
-            out = ""
-            col = 0
-            w_arr = words.split(" ")
-            w_arr.each do |word|
-                if col == 0
-                    out.concat(Format(:red, word).concat(" "))
-                end
-
-                if col == 1
-                    out.concat(Format(:white, word).concat(" "))
-                end
-
-                if col == 2
-                    out.concat(Format(:blue, word).concat(" "))
-                    col = 0
-                else
-                    col = col + 1
-                end
-            end
-            m.reply(out)
         end
     end
 
